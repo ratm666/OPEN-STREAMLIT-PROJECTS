@@ -11,8 +11,8 @@ import plotly.graph_objs as go
 #uncomment this line if you use mysql
 #from query import *
 
-st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
-st.header("ANALYTICAL PROCESSING, KPI, TRENDS & PREDICTIONS")
+st.set_page_config(page_title="엔진설계부",page_icon="🌍",layout="wide")
+st.header("부서 현황")
 
 #all graphs we use custom css not streamlit 
 theme_plotly = None 
@@ -69,11 +69,11 @@ def Home():
 
     total1,total2,total3,total4,total5=st.columns(5,gap='small')
     with total1:
-        st.info('Sum Investment',icon="💰")
-        st.metric(label="Sum TZS",value=f"{total_investment:,.0f}")
+        st.info('매출현황(총계)',icon="💰")
+        st.metric(label="매출",value=f"{total_investment:,.0f}")
 
     with total2:
-        st.info('Most Investment',icon="💰")
+        st.info('설계개선(총계)',icon="💰")
         st.metric(label="Mode TZS",value=f"{investment_mode:,.0f}")
 
     with total3:
@@ -85,7 +85,7 @@ def Home():
         st.metric(label="Median TZS",value=f"{investment_median:,.0f}")
 
     with total5:
-        st.info('Ratings',icon="💰")
+        st.info('Ratings',icon="😀")
         st.metric(label="Rating",value=numerize(rating),help=f""" Total Rating: {rating} """)
     style_metric_cards(background_color="#FFFFFF",border_left_color="#686664",border_color="#000000",box_shadow="#F71938")
 
